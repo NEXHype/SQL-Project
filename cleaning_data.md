@@ -115,9 +115,11 @@ Analytics Table:
     FROM analytics_temp
 ```
 
+
 Products Table:
 
 1) sku column was renamed to productSKU to be consistent with other tables, also only a couple values were NULL in the table, so the NULL values were filled in with an understandable value, this table was saved as a CTE and then only the relevant columns were selected and type casted to the correct type to generate the clean table.
+
 ```SQL
     CREATE OR REPLACE VIEW products_cleaned AS
     WITH products_temp AS
