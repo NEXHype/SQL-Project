@@ -59,13 +59,13 @@ all_sessions Table:
         ELSE 'USD'
         END AS currency_code
     FROM all_sessions
-)
-SELECT session_id, "fullVisitorId", "channelGrouping", CAST(time AS INT), country, city, CAST(total_transaction_revenue AS FLOAT)/1000000 AS total_transaction_revenue,
-CAST(transactions_filled AS INT), CAST(time_on_site AS INT), CAST(pageviews AS INT), CAST(session_quality_dim AS INT), CAST(date AS DATE), "visitId", type, CAST(product_quantity AS INT),
-CAST("productPrice" AS FLOAT)/1000000 AS product_price, CAST(product_revenue AS FLOAT)/1000000 AS product_revenue, "productSKU", "v2ProductName", "v2ProductCategory", 
-"productVariant", currency_code, transaction_id, "pageTitle", "pagePathLevel1", CAST("eCommerceAction_type" AS INT), CAST("eCommerceAction_step" AS INT),
-ecommerceaction_option_filled
-FROM all_sessions_temp
+    )
+    SELECT session_id, "fullVisitorId", "channelGrouping", CAST(time AS INT), country, city, CAST(total_transaction_revenue AS FLOAT)/1000000 AS total_transaction_revenue,
+    CAST(transactions_filled AS INT), CAST(time_on_site AS INT), CAST(pageviews AS INT), CAST(session_quality_dim AS INT), CAST(date AS DATE), "visitId", type, CAST(product_quantity AS INT),
+    CAST("productPrice" AS FLOAT)/1000000 AS product_price, CAST(product_revenue AS FLOAT)/1000000 AS product_revenue, "productSKU", "v2ProductName", "v2ProductCategory", 
+    "productVariant", currency_code, transaction_id, "pageTitle", "pagePathLevel1", CAST("eCommerceAction_type" AS INT), CAST("eCommerceAction_step" AS INT),
+    ecommerceaction_option_filled
+    FROM all_sessions_temp
 ```
 
 Analytics Table:
