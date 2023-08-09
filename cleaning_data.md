@@ -76,6 +76,7 @@ Analytics Table:
     ALTER TABLE analytics DROP userid
 ```
 
+
 2) Added a new colonm of distinctly numbered rows to use as the Primary Key, ordered over visitnumber.
 
 ```SQL
