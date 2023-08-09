@@ -118,7 +118,9 @@ Analytics Table:
 
 Products Table:
 
-1) sku column was renamed to productSKU to be consistent with other tables, also only a couple values were NULL in the table, so the NULL values were filled in with an understandable value, this table was saved as a CTE and then only the relevant columns were selected and type casted to the correct type to generate the clean table.
+1) sku column was renamed to productSKU to be consistent with other tables, also only a couple values were NULL in the table, 
+so the NULL values were filled in with an understandable value, this table was saved as a CTE and then only the relevant columns were selected 
+and type casted to the correct type to generate the clean table.
 
 ```SQL
     CREATE OR REPLACE VIEW products_cleaned AS
@@ -143,6 +145,7 @@ Products Table:
 Sales_by_sku Table:
 
 1) Table is already clean, so only the productsku column was renamed to productSKU to be consistent with other tables and data types changed to correct ones.
+
 ```SQL
     ALTER TABLE sales_by_sku ALTER COLUMN total_ordered TYPE INT USING total_ordered::integer
 ```
@@ -151,7 +154,10 @@ Sales_report Table:
 
 1) productsku colunm was renamed to productSKU to be consistent with other tables
 
-2) Only the ratio colunm had NULL values, and it was because it is dividing by zero when the stocklevel is zero, so all the NULL values were replaced with 'no stock' for better understanding, this table was saved as a CTE and then only the relevant colunms were selected and type casted to the correct type to generate the clean table, the table was then saved as a view for use in analysis.
+2) Only the ratio colunm had NULL values, and it was because it is dividing by zero when the stocklevel is zero, so all the NULL values 
+were replaced with 'no stock' for better understanding, this table was saved as a CTE and then only the relevant colunms 
+were selected and type casted to the correct type to generate the clean table, the table was then saved as a view for use in analysis.
+
 ```SQL
     CREATE OR REPLACE VIEW sales_report_cleaned AS
     WITH sales_report_temp AS 
