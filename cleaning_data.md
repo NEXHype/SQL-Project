@@ -77,9 +77,10 @@ Analytics Table:
 ```
 
 2) Added a new colonm of distinctly numbered rows to use as the Primary Key, ordered over visitnumber.
+
 ```SQL
     SELECT ROW_NUMBER() OVER(ORDER BY visitnumber) AS id, * FROM analytics
-    ```
+```
 
 3) All missing values were added in where possible, and all non-missing NULL values were converted to a more understandable value, all duplicate rows were identified by partitioning over the whole table, and then duplicates were eliminated by grouping each duplicate row together. this new table was then saved as a CTE, and then only the relevant columns were then selected and type casted to the correct type, and all dollar amounts were divided by 1000000 to get the correct dollar value to generate the clean table, the clean table was then saved as a view for use in analysis
     ```SQL
