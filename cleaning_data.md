@@ -141,7 +141,8 @@ and type casted to the correct type to generate the clean table.
     SELECT "productSKU", name, CAST(orderedquantity AS INT), CAST(stocklevel AS INT), CAST(restockingleadtime AS INT),
     CAST(sentimentscore_filled AS FLOAT), CAST(sentimentmagnitude_filled AS FLOAT)
     FROM products_temp
-    ```
+```
+
 
 Sales_by_sku Table:
 
